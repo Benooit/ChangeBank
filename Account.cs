@@ -6,6 +6,7 @@ namespace CalculateurDeMonnaies
 {
     class Account
     {
+        
         decimal total=0;
         struct OperationAndTotal
         {
@@ -13,6 +14,30 @@ namespace CalculateurDeMonnaies
             public decimal partialTotal;
         }
         List<OperationAndTotal> accountHistory = new List<OperationAndTotal>();
+
+
+
+
+            ///cette propriété fonctionne comme prévue
+        public decimal Total
+        {
+            get { return total; }
+        }
+
+            //PROBLÈME  ?????????????????????????
+        public List<OperationAndTotal> AccountHistory
+        {
+            get { return accountHistory; }
+        }
+           ///////////////////////////////////////////////
+           
+
+
+
+
+
+
+
 
         public Account(List<Operation> operations)//Constructor
         {
@@ -41,13 +66,5 @@ namespace CalculateurDeMonnaies
             }
         }
 
-        public decimal Total
-        {
-            get { return total; }
-        }
-        //public List<OperationAndTotal> AccountHistory
-        //{
-        //    get { return accountHistory; }
-        //}
     }
 }
