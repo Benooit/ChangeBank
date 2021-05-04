@@ -22,11 +22,11 @@ namespace CalculateurDeMonnaies
         }
 
             
-        public List<OperationAndTotal> AccountHistory //...PROBLÈME  cette propriété (accesseur) fonctionne PAS!
+        public List<OperationAndTotal> AccountHistory
         {
             get { return accountHistory; }
         }
-           
+            //...PROBLÈME  cette propriété (accesseur) fonctionne PAS!
 
            ///////////////////////////////////////////////
 
