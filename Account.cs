@@ -7,33 +7,28 @@ namespace CalculateurDeMonnaies
     class Account
     {
         
-        decimal total=0;
-        struct OperationAndTotal
+        private decimal total=0; //...Variable total
+        private struct OperationAndTotal //...Variable (structure)
         {
             public Operation operation;           
             public decimal partialTotal;
         }
-        List<OperationAndTotal> accountHistory = new List<OperationAndTotal>();
+        List<OperationAndTotal> accountHistory = new List<OperationAndTotal>();//...Variable liste de strutures
 
-
-
-
-            ///cette propriété fonctionne comme prévue
-        public decimal Total
+            
+        public decimal Total //...cette propriété (accesseur) fonctionne comme prévue
         {
             get { return total; }
         }
 
-            //PROBLÈME  ?????????????????????????
-        public List<OperationAndTotal> AccountHistory
+            
+        public List<OperationAndTotal> AccountHistory //...PROBLÈME  cette propriété (accesseur) fonctionne comme prévue
         {
             get { return accountHistory; }
         }
-           ///////////////////////////////////////////////
            
 
-
-
+           ///////////////////////////////////////////////
 
 
 

@@ -8,7 +8,7 @@ namespace CalculateurDeMonnaies
             public decimal ammount { get; }            
             public DateTime date { get; }
 
-            public Operation(string operationType, decimal ammount)
+            public Operation(string operationType, decimal ammount)//constructeur
             {
                 this.operationType = operationType;
                 this.ammount = ammount;
