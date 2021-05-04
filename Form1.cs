@@ -12,6 +12,7 @@ namespace CalculateurDeMonnaies
 {
     public partial class ChangeCalculatorForm : Form
     {
+        private StructMonnaies monnaies;
         public ChangeCalculatorForm()
         {
             InitializeComponent();
@@ -44,20 +45,14 @@ namespace CalculateurDeMonnaies
 
         private void btn_Calculer_Click(object sender, EventArgs e)
         {
-           
-            decimal totalOf_5cents = numUpDwn_5cents.Value * decimal.Parse("0.05");
-            decimal totalOf_10cents = numUpDwn_10cents.Value * decimal.Parse("0.1");
-            decimal totalOf_25cents = numUpDwn_25cents.Value * decimal.Parse("0.25");
-            decimal totalOf_1dollars = numUpDwn_1dollars.Value;
-            decimal totalOf_2dollars = numUpDwn_2dollars.Value * decimal.Parse("2");
-            decimal total = totalOf_5cents + totalOf_10cents + totalOf_25cents + totalOf_1dollars + totalOf_2dollars;
-
-            lbl_total5cents.Text = totalOf_5cents.ToString("C");
-            lbl_total10cents.Text = totalOf_10cents.ToString("C");
-            lbl_total25cents.Text = totalOf_25cents.ToString("C");
-            lbl_total1dollars.Text = totalOf_1dollars.ToString("C");
-            lbl_total2dollars.Text = totalOf_2dollars.ToString("C");
-            lbl_Total.Text = "Total : " + total.ToString("C");
+            monnaies = new StructMonnaies(numUpDwn_5cents.Value, numUpDwn_10cents.Value, numUpDwn_25cents.Value, numUpDwn_1dollars.Value, numUpDwn_2dollars.Value);
+         
+            lbl_total5cents.Text = monnaies.ValueOf5cents.ToString("C");
+            lbl_total10cents.Text = monnaies.ValueOf10cents.ToString("C");
+            lbl_total25cents.Text = monnaies.ValueOf25cents.ToString("C");
+            lbl_total1dollars.Text = monnaies.ValueOf1dollars.ToString("C");
+            lbl_total2dollars.Text = monnaies.ValueOf2dollars.ToString("C");
+            lbl_Total.Text = "Total : " + monnaies.TotalValue.ToString("C");
 
             lbl_total5cents.Visible = true;
             lbl_total10cents.Visible = true;
@@ -65,6 +60,8 @@ namespace CalculateurDeMonnaies
             lbl_total1dollars.Visible = true;
             lbl_total2dollars.Visible = true;
             lbl_Total.Visible = true;
+
+            
 
         }
     }
